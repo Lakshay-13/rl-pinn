@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Experiment outputs and checkpoints
+logs/
+repro_runs/
+*.pth
+*.log
+*.pid
+
+# Generated document build files
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz

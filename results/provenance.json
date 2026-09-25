@@ -1,0 +1,31 @@
+{
+  "project": "RL-PINN",
+  "record_type": "archived_result_summary",
+  "endpoint_evaluations": 21,
+  "additional_inference_evaluations": 6,
+  "metric": {
+    "name": "absolute potential RMSE",
+    "formula": "sqrt(mean((best_potential - reference_potential)^2))",
+    "grid_points": 100,
+    "phi_interval": [
+      0.0,
+      1.8
+    ],
+    "best_potential": "solver-selected state saved in render_report.json"
+  },
+  "random_seed": null,
+  "source_reports": "Archived render_report.json numeric arrays from the completed local schedule campaign.",
+  "raw_logs_checkpoints_and_render_reports_in_release": false,
+  "sha256": {
+    "config_file": "configs/schedules.json",
+    "config": "45d96ff018e047c816257a12e782f509468682e975381ca229990082c6771f99",
+    "summary_file": "results/summary.md",
+    "summary": "4aaa4b09a63a9493be4cf8f35ae31ee412e8b79ba52652e8558def5859afae24",
+    "data_files": {
+      "Data/Curve_sofT_case3of5.csv": "c146cd86f8fde53a52e806fc9a0f6f6cc172087fe0dd3594d248c6a09025060b",
+      "Data/Yago_A.csv": "bed1bbe37284a99bc0bb53ad8b087aff26c3e6ddcdea1e64561063f7de3cfe32",
+      "Data/Yago_Phi.csv": "2315a6daf72579b0baeef03e49b4f488f262eb59204e1d6c67168acdeb7d76ad",
+      "Data/Yago_Sigma.csv": "37311c920e933092cc6edd8b65c422d646fdb51f408a032c4f999ddcc18deb3d"
+    }
+  }
+}

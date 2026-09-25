@@ -1,0 +1,293 @@
+{
+  "project": "RL-PINN",
+  "runtime": {
+    "strategy": "flexplore",
+    "device": "cpu",
+    "workers": 8,
+    "localization_target": "both",
+    "localization_kernel": "gaussian",
+    "train_epochs": 100,
+    "patience": 10,
+    "min_delta": 0.0001,
+    "action_epochs_per_decision": 50,
+    "standard_inference_epochs": 100000,
+    "potential_grid_points": 100,
+    "potential_grid_interval": [
+      0.0,
+      1.8
+    ],
+    "random_seed": null
+  },
+  "reference": {
+    "id": "nonlocalized_flexplore_reference",
+    "schedule_id": "schedule_1",
+    "replicates": [
+      1
+    ],
+    "localization_target": "none",
+    "localization_kernel": "gaussian"
+  },
+  "schedules": [
+    {
+      "id": "schedule_1",
+      "replicates": [
+        1,
+        2,
+        3
+      ],
+      "cycles": 5,
+      "memory_targets": [
+        10000,
+        20000,
+        20000,
+        30000,
+        30000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": true,
+      "cycle_evaluation": "schedule_context",
+      "additional_inference_epochs": [],
+      "pin_reset_epochs": 10000
+    },
+    {
+      "id": "schedule_2",
+      "replicates": [
+        1,
+        2,
+        3
+      ],
+      "cycles": 5,
+      "memory_targets": [
+        20000,
+        25000,
+        25000,
+        35000,
+        35000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": true,
+      "cycle_evaluation": "schedule_context",
+      "additional_inference_epochs": [],
+      "pin_reset_epochs": 10000
+    },
+    {
+      "id": "schedule_3",
+      "replicates": [
+        1,
+        2,
+        3
+      ],
+      "cycles": 5,
+      "memory_targets": [
+        10000,
+        20000,
+        30000,
+        40000,
+        50000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": true,
+      "cycle_evaluation": "schedule_context",
+      "additional_inference_epochs": [],
+      "pin_reset_epochs": 10000
+    },
+    {
+      "id": "schedule_4",
+      "replicates": [
+        1,
+        2,
+        3
+      ],
+      "cycles": 6,
+      "memory_targets": [
+        10000,
+        20000,
+        20000,
+        30000,
+        30000,
+        30000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.5
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": false,
+      "cycle_evaluation": "schedule_context",
+      "additional_inference_epochs": [],
+      "pin_reset_epochs": 10000
+    },
+    {
+      "id": "schedule_5",
+      "replicates": [
+        1
+      ],
+      "cycles": 5,
+      "memory_targets": [
+        20000,
+        40000,
+        40000,
+        60000,
+        60000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "greedy_then_epsilon",
+      "steps_per_episode": 400,
+      "memory_block": 20000,
+      "cycle_stop": false,
+      "cycle_evaluation": "schedule_context",
+      "additional_inference_epochs": [
+        100000,
+        200000,
+        300000
+      ],
+      "pin_reset_epochs": 20000
+    },
+    {
+      "id": "schedule_6",
+      "replicates": [
+        1
+      ],
+      "cycles": 5,
+      "memory_targets": [
+        100000,
+        200000,
+        200000,
+        300000,
+        300000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": true,
+      "cycle_evaluation": "schedule_context",
+      "additional_inference_epochs": [],
+      "pin_reset_epochs": 10000
+    },
+    {
+      "id": "schedule_7",
+      "replicates": [
+        1,
+        2,
+        3
+      ],
+      "cycles": 5,
+      "memory_targets": [
+        5000,
+        10000,
+        10000,
+        20000,
+        30000
+      ],
+      "epsilon_schedule": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": false,
+      "cycle_evaluation": "unconditional_frontier",
+      "additional_inference_epochs": [
+        100000
+      ],
+      "pin_reset_epochs": 10000
+    },
+    {
+      "id": "schedule_8",
+      "replicates": [
+        1,
+        2,
+        3
+      ],
+      "cycles": 3,
+      "memory_targets": [
+        30000,
+        30000,
+        30000
+      ],
+      "epsilon_schedule": [
+        1.0,
+        0.2,
+        0.2
+      ],
+      "collection_mode": "single_epsilon",
+      "steps_per_episode": 200,
+      "memory_block": 10000,
+      "cycle_stop": false,
+      "frontier_free_scales": true,
+      "cycle_evaluation": "unconditional_frontier",
+      "additional_inference_epochs": [
+        100000
+      ],
+      "pin_reset_epochs": 10000
+    }
+  ],
+  "inference_extensions": [
+    {
+      "schedule_id": "schedule_1",
+      "replicate": 1,
+      "epochs": [
+        200000,
+        500000
+      ]
+    },
+    {
+      "schedule_id": "schedule_2",
+      "replicate": 2,
+      "epochs": [
+        200000,
+        500000
+      ]
+    }
+  ]
+}
